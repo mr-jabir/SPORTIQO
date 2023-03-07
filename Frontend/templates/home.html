@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+{% load static %}
+<!--
+  Name: Snow - Minimal & Clean Portfolio HTML Template
+  Version: 1.0.1
+  Author: nK, unvab
+  Website: https://nkdev.info, http://unvab.com/
+  Purchase: https://nkdev.info
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2017.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>SPORTIQO SPORTS MALL </title>
+
+    <meta name="description" content="Snow - Clean & Minimal Portfolio HTML template.">
+    <meta name="keywords" content="portfolio, clean, minimal, blog, template, portfolio website">
+    <meta name="author" content="nK">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+    <link rel="icon" type="image/png" href="{% static 'assets/images/TITLE.png' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'assets/css/combined.css' %}">
+
+    <!-- END: Styles -->
+ <link rel="stylesheet" href="{% static 'product/assets/css/all.min.css' %}">
+
+</head>
+
+<body>
+
+
+
+
+    <header class="nk-header">
+        <!--
+        START: Navbar
+    -->
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top">
+            <div class="container">
+                <div class="nk-nav-table">
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="{% static 'assets/images/logoo.png' %}" alt="" width="180" class="nk-nav-logo-onscroll">
+                        <img src="{% static 'assets/images/logo1.png' %}" alt="" width="180">
+                    </a>
+
+                    <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
+                        <li>
+                            <a href="index.html#about">ABOUT</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'categorypage' %}">CATEGORIES</a>
+                        </li>
+
+                         <li>
+                            <a href="{% url 'contactpage' %}">CONTACT</a>
+                        </li>
+
+        <li >
+            <a href="{% url 'weblogin' %}">  Login/Signup </a></li>
+
+                             <i class="fas fa-user-alt"></i><li>
+
+      <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
+ {% if request.session.username %}
+          <span><i class="fa fa-user-o" aria-hidden="true"></i>{{ request.session.username }} </span>
+          {% endif %}
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right">
+
+
+        <li class="dropdown-divider"></li>
+        <li class="dropdown-item"><a href="{% url 'logout' %}"> <i class="icon-power mr-2"></i> Logout </a></li>
+
+      </ul>
+    </li>
+                         <li style="padding-left: 50px;">
+                           <div class="header-icons">
+                              <a class="shopping-cart" href="{% url 'viewcartpage' %}"><i class="fas fa-shopping-cart"></i></a>
+<!--                              <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+                           </div>
+                        </li>
+                    </ul>
+
+                    <ul class="nk-nav nk-nav-right nk-nav-icons">
+                        <li class="single-icon hidden-lg-up">
+                            <a href="#" class="nk-navbar-full-toggle">
+                                <span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+                                    <span class="nk-t-2"></span>
+                                    <span class="nk-t-3"></span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END: Navbar -->
+
+    </header>
+
+
+
+
+    <!--
+    START: Navbar Mobile
+-->
+    <nav class="nk-navbar nk-navbar-full nk-navbar-align-center" id="nk-nav-mobile">
+        <div class="nk-navbar-bg">
+            <div class="bg-image" style="background-image: url({% static 'assets/images/bg-menu.jpg' %})"></div>
+        </div>
+        <div class="nk-nav-table">
+            <div class="nk-nav-row">
+                <div class="container">
+                    <div class="nk-nav-header">
+
+                        <div class="nk-nav-logo">
+                            <a href="index.html" class="nk-nav-logo">
+                                <img src="{% static 'assets/images/logo-light.svg' %}" alt="" width="85">
+                            </a>
+                        </div>
+
+                        <div class="nk-nav-close nk-navbar-full-toggle">
+                            <span class="nk-icon-close"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-nav-row-full nk-nav-row">
+                <div class="nano">
+                    <div class="nano-content">
+                        <div class="nk-nav-table">
+                            <div class="nk-nav-row nk-nav-row-full nk-nav-row-center nk-navbar-mobile-content">
+                                <ul class="nk-nav">
+                                    <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-nav-row">
+                <div class="container">
+                    <div class="nk-nav-social">
+                        <ul>
+                            <li><a href="https://twitter.com/nkdevv"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/unvabdesign/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://dribbble.com/_nK"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="https://www.instagram.com/unvab/"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Navbar Mobile -->
+
+
+    <div class="nk-main">
+
+        <!-- START: Header Title -->
+        <div class="nk-header-title nk-header-title-full">
+            <div class="bg-image">
+                <div style="background-image: url({% static 'assets/images/bgg1.jpg' %});"></div>
+                <div class="bg-image-overlay" style="background-color: rgba(12, 12, 12, 0.6);"></div>
+            </div>
+            <div class="nk-header-table">
+                <div class="nk-header-table-cell">
+                    <div class="container">
+
+<!--                        <h2 class="nk-subtitle text-white">New Branding Agency</h2>-->
+
+
+                        <h1 class="nk-title display-3 text-white">"Don't think about the start of the race,think about the ending"
+                            <br>
+                            <em class="fw-300" style="font-size: 28px ;margin-left: 690px;">       ~Usain Bolt</em>
+                        </h1>
+
+
+                        <div class="nk-gap"></div>
+                        <div class="nk-header-text text-white">
+                            <div class="nk-gap-4"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a class="nk-header-title-scroll-down text-white" href="#nk-header-title-scroll-down">
+                    <span class="pe-7s-angle-down"></span>
+                </a>
+            </div>
+
+        </div>
+
+        <div id="nk-header-title-scroll-down"></div>
+
+        <!-- END: Header Title -->
+
+
+
+
+
+        <!-- START: About Our Agency -->
+        <div class="bg-white" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-xs-center">
+                        <div class="nk-gap-4 mt-9"></div>
+
+                        <h2 class="display-4">About Us</h2>
+                        <div class="nk-gap mnt-5"></div>
+
+                        <p>   Now enjoy and experience the entire offering of SPORTIQO's India’s 70+ sports and over 5,000 products by using the SPORTIQO  |
+Choose from an array of gear and equipment that's designed to get you play-ready.</p>
+
+                        <img src="{% static 'assets/images/about-me-signature.png' %}" alt="" class="nk-img-fit">
+
+                        <div class="nk-gap-4 mt-25"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: About Our Agency -->
+
+        <!-- START: Features -->
+
+      <div class="bg-white">
+            <div class="container">
+                <div class="nk-carousel-2 nk-carousel-x4 nk-carousel-no-margin nk-carousel-all-visible">
+                    <div class="nk-carousel-inner">
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/jordanew.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/addidas.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/nike.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/puma.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/reebok.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/underarmour.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/cr7.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="nk-box-1">
+                                    <img src="{% static 'assets/images/Nivia.png' %}" alt="" class="nk-img-fit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- END: Features -->
+
+        <!-- START: Portfolio -->
+        <div class="nk-box bg-white" id="projects">
+            <div class="nk-gap-4 mt-5"></div>
+
+            <h2 class="text-xs-center display-4">CATEGORIES</h2>
+
+            <div class="nk-gap mnt-6"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="text-xs-center">SPORTS CATEGORIES
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nk-gap-2 mt-12"></div>
+            <div class="container">
+
+            <div class="nk-portfolio-list nk-isotope nk-isotope-3-cols">
+{% for d in data %}
+                <div class="nk-isotope-item" data-filter="Mockup">
+
+                    <div class="nk-portfolio-item nk-portfolio-item-square nk-portfolio-item-info-style-1">
+                        <a href="{% url 'disproduct' itemcatg=d.Name %}" class="nk-portfolio-item-link"></a>
+
+<!--                        <div class="nk-portfolio-item-image">-->
+<!--                            -->
+<!--                       </div>-->  <img src="{{ d.Image.url }} " width="370px" height="350px">
+
+                        <div class="nk-portfolio-item-info nk-portfolio-item-info-center text-xs-center">
+
+                            <div>
+                                <h2 class="portfolio-item-title h3">{{ d.Name }}</h2>
+                                <div class="portfolio-item-category">{{ d.Description }}</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+{% endfor %}
+            </div>
+
+            <div class="nk-gap-4 mt-15"></div>
+        </div>
+        <!-- END: Portfolio -->
+
+        <!-- START: Reviews -->
+        <div class="nk-box bg-dark-1">
+            <div class="bg-image bg-image-parallax" style="background-image: url({% static 'assets/images/bg-pattern.jpg' %});"></div>
+            <div class="nk-gap-5 mnt-6"></div>
+            <div class="nk-gap-3"></div>
+            <div class="container-fluid">
+                <!-- START: Carousel -->
+                <div class="nk-carousel nk-carousel-all-visible text-white" data-autoplay="18000" data-dots="true">
+                    <div class="nk-carousel-inner">
+                        <div>
+                            <div>
+                                <blockquote class="nk-blockquote-style-1 text-white">
+                                    <p> "if you train hard you'll not only be hard,you'll be hard to beat</p>
+                                    <cite>Herschel Walker</cite>
+                                </blockquote>
+                                <div class="nk-gap-3 mt-10"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <blockquote class="nk-blockquote-style-1 text-white">
+                                    <p>"Don't put a limit on anything the more you dream the further you get" </p>
+                                    <cite>Michael Phelps</cite>
+                                </blockquote>
+                                <div class="nk-gap-3 mt-10"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <blockquote class="nk-blockquote-style-1 text-white">
+                                    <p>"Every champion was once a contender that refused to give up"</p>
+                                    <cite>Rocky Balboa</cite>
+                                </blockquote>
+                                <div class="nk-gap-3 mt-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Carousel -->
+            </div>
+            <div class="nk-gap-4 mt-3"></div>
+        </div>
+        <!-- END: Reviews -->
+
+        <!-- START: Partners -->
+
+        <!-- END: Partners -->
+
+        <!-- START: Blog -->
+        <div class="nk-box bg-gray-1" id="blog">
+            <div class="nk-gap-4 mt-5"></div>
+
+            <h2 class="text-xs-center display-4">POPULAR PRODUCTS</h2>
+
+            <div class="nk-gap mnt-6"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="text-xs-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nk-gap-2 mt-12"></div>
+            <div class="container">
+                <!-- START: Carousel -->
+                <div class="nk-carousel-2 nk-carousel-x2 nk-carousel-no-margin nk-carousel-all-visible nk-blog-isotope" data-dots="true">
+                    <div class="nk-carousel-inner">
+
+
+                        <div>
+                            <div>
+                                <div class="pl-15 pr-15">
+                                    <div class="nk-blog-post">
+                                        <div class="nk-post-thumb">
+                                            <a href="#">
+                                                <img src="{% static 'assets/images/cycle.jpg' %}"height="275px" width="180px" alt="" class="nk-img-stretch">
+                                            </a>
+
+                                        </div>
+                                        <h2 class="nk-post-title h4">Bicycle</h2>
+
+
+
+                                        <div class="nk-post-text">
+                                            <p>A bicycle, also called a pedal cycle, bike, push-bike or cycle, is a human-powered or motor-powered assisted, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nk-gap-1"></div>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <div>
+                                <div class="pl-15 pr-15">
+                                    <div class="nk-blog-post">
+                                        <div class="nk-post-thumb">
+                                            <a href="#">
+                                                <img src="{% static 'assets/images/skating.jpg' %}"height="275px" width="180px" alt="" class="nk-img-stretch">
+                                            </a>
+
+                                        </div>
+                                        <h2 class="nk-post-title h4">
+                                            Skateboard</h2>
+
+
+
+                                        <div class="nk-post-text">
+                                            <p>A skateboard is a type of sports equipment used for skateboarding.They are usually made of a specially designed 7-8 ply maple plywood deck and polyurethane wheels attached to the underside by a pair of skateboarding trucks.</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="nk-gap-1"></div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div>
+                            <div>
+                                <div class="pl-15 pr-15">
+                                    <div class="nk-blog-post">
+                                        <div class="nk-post-thumb">
+                                            <a href="#">
+                                                <img src="{% static 'assets/images/inlineskate.jpg' %}"height="275px" width="180px" alt="" class="nk-img-stretch">
+                                            </a>
+
+                                        </div>
+                                        <h2 class="nk-post-title h4">
+                                            Inline Skates</h2>
+
+
+
+                                        <div class="nk-post-text">
+                                            <p>Inline skates are a type of roller skate used for inline skating. Unlike quad skates, which have two front and two rear wheels, inline skates typically have two to five wheels arranged in a single line. Some, especially using those for recreation </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nk-gap-1"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END: Carousel -->
+<!--            </div>-->
+<!--            <div class="nk-gap-5 mt-20"></div>-->
+<!--        </div>-->
+        <!-- END: Blog -->
+
+        <!-- START: Contact Info -->
+<!--        <div class="container" id="contact">-->
+<!--            <div class="nk-gap-5"></div>-->
+<!--            <div class="row vertical-gap">-->
+<!--                <div class="col-lg-5">-->
+<!--                    &lt;!&ndash; START: Info &ndash;&gt;-->
+<!--                    <h2 class="display-4">Contact Info:</h2>-->
+<!--                    <div class="nk-gap mnt-3"></div>-->
+
+<!--                    <p>Praesent interdum congue mauris, et fringilla lacus pel vitae. Quisque nisl mauris, aliquam eu ultrices vel, conse vitae sapien at imperdiet risus. Quisque cursus risus id. fermentum, in auctor quam consectetur.</p>-->
+
+<!--                    <ul class="nk-contact-info">-->
+<!--                        <li>-->
+<!--                            <strong>Address:</strong> 10111 Santa Monica Boulevard, LA</li>-->
+<!--                        <li>-->
+<!--                            <strong>Phone:</strong> +44 987 065 908</li>-->
+<!--                        <li>-->
+<!--                            <strong>Email:</strong> info@Example.com</li>-->
+<!--                        <li>-->
+<!--                            <strong>Fax:</strong> +44 987 065 909</li>-->
+<!--                    </ul>-->
+<!--                    &lt;!&ndash; END: Info &ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="col-lg-7">-->
+<!--                    &lt;!&ndash; START: Form &ndash;&gt;-->
+<!--                    <form action="#" class="nk-form nk-form-ajax">-->
+<!--                        <div class="row vertical-gap">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <input type="text" class="form-control required" name="name" placeholder="Your Name">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <input type="email" class="form-control required" name="email" placeholder="Your Email">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="nk-gap-1"></div>-->
+<!--                        <input type="text" class="form-control required" name="title" placeholder="Your Title">-->
+
+<!--                        <div class="nk-gap-1"></div>-->
+<!--                        <textarea class="form-control required" name="message" rows="8" placeholder="Your Comment" aria-required="true"></textarea>-->
+<!--                        <div class="nk-gap-1"></div>-->
+<!--                        <div class="nk-form-response-success"></div>-->
+<!--                        <div class="nk-form-response-error"></div>-->
+<!--                        <button class="nk-btn">Send Message</button>-->
+<!--                    </form>-->
+<!--                    &lt;!&ndash; END: Form &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="nk-gap-5"></div>-->
+<!--        </div>-->
+        <!-- END: Contact Info -->
+
+
+
+</div>
+        <!--
+    START: Footer
+-->
+        <footer class="nk-footer">
+
+
+            <div class="nk-footer-cont">
+                <div class="container text-xs-center">
+                    <div class="nk-footer-social">
+                        <ul>
+                            <li><a href="https://twitter.com/?lang=en-in"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://dribbble.com/?/"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nk-footer-text">
+                        <p>2023 &copy; www.spotiqo.com</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END: Footer -->
+
+
+    </div>
+
+
+
+
+    <!-- START: Scripts -->
+
+    <script src="{% static 'assets/js/combined.js' %}"></script>
+
+    <!-- END: Scripts -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   {% if messages %}
+  {% for message in messages %}
+
+   {% if message.tags == 'warning' %}
+   <script>
+     swal('{{message}}','','warning');
+   </script>
+
+   {% elif message.tags == 'error' %}
+   <script>
+     swal('{{message}}','','error');
+   </script>
+
+   {% else%}
+   <script>
+     swal('{{message}}','','success');
+   </script>
+
+   {% endif %}
+
+   {% endfor %} {% endif %}
+
+        </div></div>
+</body>
+
+</html>

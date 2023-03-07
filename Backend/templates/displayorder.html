@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Admin</title>
+</head>
+<body>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Display Admin</h5>
+			  <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">ADDRESS</th>
+                    <th scope="col">PHONE</th>
+                    <th scope="col">PINCODE</th>
+                      <th scope="col">PAYMENT</th>
+                      <th scope="col">PURCHASED</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for d in data %}
+                  <tr>
+
+                    <td>{{ d.Name }}</td>
+                    <td>{{ d.Email }}</td>
+                    <td>{{ d.Address }}</td>
+                    <td>{{ d.Phone }}</td>
+                    <td>{{ d.Pincode }}</td>
+                    <td>{{ d.CardName }}</td>
+                    <td>{{ d.Expiration }}</td>
+
+
+                  <td>
+                              <button type="submit" onclick="alertmsg()" class="btn btn-light">approve </button>
+                </td>
+                      <td>
+                          <form action="{% url 'deleteorder' dataid=d.id %}">
+                              <button type="submit" class="btn btn-light">delete</button>
+                          </form>
+                      </td>
+
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+<script>
+    function alertmsg(){
+        window.alert("approved for delivery")
+        }
+</script>
+
+</body>
+</html>
+{% endblock %}

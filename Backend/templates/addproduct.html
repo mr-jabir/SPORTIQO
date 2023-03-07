@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+           <div class="card-body">
+           <div class="card-title">Add Product</div>
+           <hr>
+            <form method="post" action="{% url 'productsave' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+<!--           <div class="form-group">-->
+<!--            <label for="input-6">Category</label>-->
+<!--            <input type="text" class="form-control form-control-rounded" id="input-6" placeholder="Category" name="category">-->
+<!--           </div>-->
+                <div class="form-group">
+                        <label for="exampleSelectGender">Category</label>
+                        <select class="form-control form-control-rounded" id="exampleSelectGender" name="category">
+                            <option>select</option>
+                            {% for d in data %}
+                            <option>{{ d.Name }}</option>
+                          {% endfor %}
+                        </select>
+
+                      </div>
+           <div class="form-group">
+            <label for="input-7">Name</label>
+            <input type="text" class="form-control form-control-rounded" id="input-7" placeholder="Enter Product Name "name="name">
+           </div>
+
+           <div class="form-group">
+            <label for="input-9">Description</label>
+            <input type="text" class="form-control form-control-rounded" id="input-1" placeholder="Enter Description" name="description">
+           </div>
+                <div class="form-group">
+            <label for="input-9">Price</label>
+            <input type="text" class="form-control form-control-rounded" id="input-2" placeholder="Enter Price" name="price">
+                </div>
+                <div class="form-group">
+            <label for="input-9">Quantity</label>
+            <input type="text" class="form-control form-control-rounded" id="input-9" placeholder="Enter Quantity" name="quantity">
+                </div>
+
+                <div class="form-group">
+                    <label for="input-11">File upload</label>
+                    <input type="file" class="form-control form-control-rounded" id="input-11" placeholder="file upload" name="image">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-light" type="submit"> submit</button>
+                </div>
+
+</body>
+</html>
+{% endblock %}

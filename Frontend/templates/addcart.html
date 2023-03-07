@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+   <!-- title -->
+   <title>SPORTIQO SPORTS MALL</title>
+
+   <!-- favicon -->
+   <link rel="shortcut icon" type="image/png" href="{% static 'product/assets/img/title.png' %}">
+   <!-- google font -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+   <!-- fontawesome -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/all.min.css' %}">
+   <!-- bootstrap -->
+   <link rel="stylesheet" href="{% static 'product/assets/bootstrap/css/bootstrap.min.css' %}">
+   <!-- owl carousel -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/owl.carousel.css' %}">
+   <!-- magnific popup -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/magnific-popup.css' %}">
+   <!-- animate css -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/animate.css' %}">
+   <!-- mean menu css -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/meanmenu.min.css' %}">
+   <!-- main style -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/main.css' %}">
+   <!-- responsive -->
+   <link rel="stylesheet" href="{% static 'product/assets/css/responsive.css' %}">
+
+</head>
+<body>
+
+   <!--PreLoader-->
+
+    <!--PreLoader Ends-->
+
+   <!-- header -->
+   <div class="top-header-area" id="sticker" style="background-color: #202c45;" >
+      <div class="container" >
+         <div class="row">
+            <div class="col-lg-12 col-sm-12 text-center">
+               <div class="main-menu-wrap">
+                  <!-- logo -->
+                  <div class="site-logo">
+                     <a href="index.html">
+<!--                        <h3 style="font-color: red">Care<span>Point</span></h3>-->
+                         <img src="{% static 'product/assets/img/logoo.png' %}" alt="">
+                     </a>
+                  </div>
+<!--                   logo -->
+
+
+
+
+<!--                   menu start -->
+                  <nav class="main-menu">
+                     <ul>
+                        <li class="current-list-item"><a href="{% url 'homepage' %}">HOME</a>
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="index.html">Static Home</a></li>-->
+<!--                              <li><a href="index_2.html">Slider Home</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                         <li>
+                            <a href="{% url 'categorypage' %}">CATEGORIES</a>
+                        </li>
+
+                         <li>
+                            <a href="{% url 'contactpage' %}">CONTACT</a>
+                        </li>
+<!--                        <li><a href="#">Pages</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="404.html">404 page</a></li>-->
+<!--                              <li><a href="about.html">About</a></li>-->
+<!--                              <li><a href="cart.html">Cart</a></li>-->
+<!--                              <li><a href="checkout.html">Check Out</a></li>-->
+<!--                              <li><a href="contact.html">Contact</a></li>-->
+<!--                              <li><a href="news.html">News</a></li>-->
+<!--                              <li><a href="shop.html">Shop</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+<!--                        <li><a href="news.html">News</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="news.html">News</a></li>-->
+<!--                              <li><a href="single-news.html">Single News</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                         <i class="fas fa-user-alt"></i>
+                        {% if request.session.username %}
+                        <li><a href=""><B>{{ request.session.username }}</B></a>
+                           {% endif %}
+                           <ul class="sub-menu">
+                              <li><a href="{% url 'weblogin' %}">SIGN IN/SIGN UP</a></li>
+                              <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                           </ul>
+                        </li>
+<!--                        <li><a href="shop.html">Shop</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="shop.html">Shop</a></li>-->
+<!--                              <li><a href="checkout.html">Check Out</a></li>-->
+<!--                              <li><a href="single-product/assets.html">Single Product/assets</a></li>-->
+<!--                              <li><a href="cart.html">Cart</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                        <li>
+                           <div class="header-icons">
+                              <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+<!--                              <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+                           </div>
+                        </li>
+                     </ul>
+                  </nav>
+<!--                  <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+<!--                  <div class="mobile-menu"></div>-->
+                  <!-- menu end -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end header -->
+
+   <!-- search area -->
+   <div class="search-area">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <span class="close-btn"><i class="fas fa-window-close"></i></span>
+               <div class="search-bar">
+                  <div class="search-bar-tablecell">
+                     <h3>Search For:</h3>
+                     <input type="text" placeholder="Keywords">
+                     <button type="submit">Search <i class="fas fa-search"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end search arewa -->
+
+   <!-- breadcrumb-section -->
+   <div class="breadcrumb-section" style="background-color: #202c45;>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="breadcrumb-text">
+                  <p style="font-size: 20px;">SPORTIQO SPORTS MALL</p>
+                  <h1>Cart</h1>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end breadcrumb section -->
+
+   <!-- cart -->
+	<div class="cart-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-12">
+					<div class="cart-table-wrap">
+						<table class="cart-table">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+									<th class="product-name">NAME</th>
+									<th class="product-price">CATEGORY</th>
+									<th class="product-quantity">QUANTITY</th>
+									<th class="product-total">TOTAL</th>
+									<th class="product-remove"></th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for d in data %}
+								<tr class="table-body-row cart-item" >
+									<td class="product-name">{{ d.Proname }}</td>
+									<td class="product-price">{{ d.Category }}</td>
+									<td class="product-price">{{ d.Quantity }}</td>
+									<td class="item-price">{{ d.Price }}₹</td>
+									<td class="product-remove"><a href="{% url 'deletecartfont' dataid=d.id %}"><i class="fa fa-trash"></i></a></td>
+									{% endfor %}
+								</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="total-section">
+						<table class="total-table">
+							<thead class="total-table-head">
+								<tr class="table-total-row">
+									<th> Total Price</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total-data">
+									<td><strong>GST : </strong></td>
+									<td id="gst-price">40₹</td>
+								</tr>
+								<tr class="total-data">
+									<td><strong>Total Amount : </strong></td>
+									<td id="total-price"></td>
+								</tr>
+							<tr class="total-data">
+									<td><strong>Net Amount : </strong></td>
+									<td id="total-price-gst"></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cart-buttons">
+							<a href="{% url 'check' %}" class="boxed-btn black">PLACE ORDER</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--   <div class="cart-section mt-150 mb-150">-->
+<!--      <div class="container">-->
+<!--         <div class="row">-->
+<!--            <div class="col-lg-8 col-md-12">-->
+<!--               <div class="cart-table-wrap">-->
+<!--                  <table class="cart-table">-->
+<!--                     <thead class="cart-table-head">-->
+<!--                        <tr class="table-head-row">-->
+<!--                           <th class="product/assets-remove"></th>-->
+<!--                           <th class="product/assets-name">Name</th>-->
+<!--                           <th class="product/assets-price">Price</th>-->
+<!--                           <th class="product/assets-quantity">Quantity</th>-->
+
+<!--                        </tr>-->
+<!--                     </thead>-->
+<!--                     <tbody>-->
+<!--                     {% for d in data %}-->
+<!--                        <tr class="table-body-row">-->
+<!--                           <td class="product/assets-remove"><a href="{% url 'deletecartfont' dataid=d.id %}"><i class="far fa-window-close"></i></a></td>-->
+
+<!--                           <td class="product/assets-name">{{ d.PDCTNAME }}</td>-->
+
+<!--                           <td class="product/assets-quantity">{{ d.QUANTITY}}</td>-->
+<!--                           <td class=item-price">{{ d.PRIZE }}</td>-->
+
+<!--                        </tr>-->
+<!--                     {% endfor %}-->
+<!--&lt;!&ndash;                        <tr class="table-body-row">&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-remove"><a href="#"><i class="far fa-window-close"></i></a></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-image"><img src="{% static 'product/assets/img/product/assetss/product/assets-img-2.jpg' %}" alt=""></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-name">Berry</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-price">$70</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-quantity"><input type="number" placeholder="0"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-total">1</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <tr class="table-body-row">&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-remove"><a href="#"><i class="far fa-window-close"></i></a></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-image"><img src="{% static 'product/assets/img/product/assetss/product/assets-img-3.jpg' %}" alt=""></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-name">Lemon</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-price">$35</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-quantity"><input type="number" placeholder="0"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <td class="product/assets-total">1</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </tr>&ndash;&gt;-->
+<!--                     </tbody>-->
+<!--                  </table>-->
+<!--               </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-4">-->
+<!--               <div class="total-section">-->
+<!--                  <table class="total-table">-->
+<!--                     <thead class="total-table-head">-->
+<!--                        <tr class="table-total-row">-->
+
+<!--                        </tr>-->
+<!--                     </thead>-->
+<!--                     <tbody>-->
+
+<!--                        </tr>-->
+<!--                        <tr class="total-data">-->
+<!--                           <td><strong>Subtotal: </strong></td>-->
+<!--                           <button id="calculateTotal"> Calculate total</button>-->
+<!--                                    <p id="totalPrice"></p>-->
+<!--                        </tr>-->
+<!--                     </tbody>-->
+<!--                  </table>-->
+<!--                  <div class="cart-buttons">-->
+<!--                     <a href="cart.html" class="boxed-btn">Update Cart</a>-->
+<!--                     <a href="checkout.html" class="boxed-btn black">Check Out</a>-->
+<!--                  </div>-->
+<!--               </div>-->
+
+<!--&lt;!&ndash;               <div class="coupon-section">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <h3>Apply Coupon</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div class="coupon-form-wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;                     <form action="index.html">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p><input type="text" placeholder="Coupon"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p><input type="submit" value="Apply"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                     </form>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;               </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--   </div>-->
+   <!-- end cart -->
+
+   <!-- logo carousel -->
+<!--   <div class="logo-carousel-section">-->
+<!--      <div class="container">-->
+<!--         <div class="row">-->
+<!--            <div class="col-lg-12">-->
+<!--               <div class="logo-carousel-inner">-->
+<!--                  <div class="single-logo-item">-->
+<!--                     <img src="product/assets/img/company-logos/1.png" alt="">-->
+<!--                  </div>-->
+<!--                  <div class="single-logo-item">-->
+<!--                     <img src="product/assets/img/company-logos/2.png" alt="">-->
+<!--                  </div>-->
+<!--                  <div class="single-logo-item">-->
+<!--                     <img src="product/assets/img/company-logos/3.png" alt="">-->
+<!--                  </div>-->
+<!--                  <div class="single-logo-item">-->
+<!--                     <img src="product/assets/img/company-logos/4.png" alt="">-->
+<!--                  </div>-->
+<!--                  <div class="single-logo-item">-->
+<!--                     <img src="product/assets/img/company-logos/5.png" alt="">-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--   </div>-->
+   <!-- end logo carousel -->
+
+   <!-- footer -->
+
+   <!-- end footer -->
+
+   <!-- copyright -->
+  <div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+							<p>SPORTIQO SPORTS MALL</p>
+                             <p>www.sportiqo.com</p>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+   <!-- end copyright -->
+
+   <!-- jquery -->
+
+   <script src="{% static 'product/assets/js/jquery-1.11.3.min.js' %}"></script>
+   <!-- bootstrap -->
+   <script src="{% static 'product/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+   <!-- count down -->
+   <script src="{% static 'product/assets/js/jquery.countdown.js' %}"></script>
+   <!-- isotope -->
+   <script src="{% static 'product/assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+   <!-- waypoints -->
+   <script src="{% static 'product/assets/js/waypoints.js' %}"></script>
+   <!-- owl carousel -->
+   <script src="{% static 'product/assets/js/owl.carousel.min.js' %}"></script>
+   <!-- magnific popup -->
+   <script src="{% static 'product/assets/js/jquery.magnific-popup.min.js' %}"></script>
+   <!-- mean menu -->
+   <script src="{% static 'product/assets/js/jquery.meanmenu.min.js' %}"></script>
+   <!-- sticker js -->
+   <script src="{% static 'product/assets/js/sticker.js' %}"></script>
+   <!-- main js -->
+   <script src="{% static 'product/assets/js/main.js' %}"></script>
+
+
+<script>
+const cartItems = document.querySelectorAll(".cart-item");
+let totalPrice = 0;
+
+cartItems.forEach(item => {
+  const itemPrice = parseFloat(item.querySelector(".item-price").textContent);
+  totalPrice += itemPrice;
+});
+
+const gstPrice = parseFloat(document.getElementById("gst-price").textContent);
+const totalPriceWithGst = totalPrice + gstPrice;
+
+document.getElementById("total-price").textContent = " " + totalPrice.toFixed(2);
+document.getElementById("total-price-gst").textContent = " " + totalPriceWithGst.toFixed(2);
+
+
+
+
+</script>
+
+   {% if messages %}
+  {% for message in messages %}
+
+   {% if message.tags == 'warning' %}
+   <script>
+     swal('{{message}}','','warning');
+   </script>
+
+   {% elif message.tags == 'error' %}
+   <script>
+     swal('{{message}}','','error');
+   </script>
+
+   {% else%}
+   <script>
+     swal('{{message}}','','success');
+   </script>
+
+   {% endif %}
+
+   {% endfor %} {% endif %}
+
+
+</body>
+</html>

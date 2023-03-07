@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SPORTIQO SPORTS MALL</title>
+</head>
+<body>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">DISPLAY COMPLAINTS</h5>
+			  <div class="table-responsive">
+               <table class="table table-striped">
+                  <thead>
+                    <tr>
+                        <th scope="col">NO</th>
+                      <th scope="col">NAME</th>
+                      <th scope="col">EMAIL</th>
+                      <th scope="col">SUBJECT</th>
+                      <th scope="col">MESSAGE</th>
+                        <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for d in data %}
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{{d.Name}}</td>
+                      <td>{{d.Email}}</td>
+                      <td>{{d.Subject}}</td>
+                      <td>{{d.Message}}</td>
+                        <td>
+                             <form action="{% url 'deletemessage' dataid=d.id %}">
+                             <button type="submit" class="btn btn-light">DELETE</button>
+                          </form>
+                        </td>
+
+                    </tr>
+
+                  </tbody>
+                   {% endfor %}
+                </table>
+            </div>
+            </div>
+          </div>
+        </div>
+</body>
+</html>
+{% endblock %}

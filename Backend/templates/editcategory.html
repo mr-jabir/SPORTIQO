@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+           <div class="card-body">
+           <div class="card-title">Add Category</div>
+           <hr>
+            <form method="post" action="{% url 'updatecategory' dataid=data.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+           <div class="form-group">
+            <label for="input-6"> Name</label>
+            <input type="text" class="form-control form-control-rounded" id="input-6" placeholder="Enter Category Name" name="name" value="{{ data.Name }}">
+           </div>
+           <div class="form-group">
+            <label for="input-7">Description</label>
+            <input type="text"  class="form-control form-control-rounded" id="input-7" placeholder="Enter Description"name="description" value="{{ data.Description }}">
+
+           </div>
+
+
+                 <div class="form-group">
+                    <label for="input-11">File upload</label>
+                        <img src="{{data.Image.url}}" width="200px" height="200px">
+                        <input type="file" class="form-control form-control-rounded" id="input-11" placeholder="file upload" name="image">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-light" type="submit"> submit</button>
+
+
+</body>
+</html>
+{% endblock %}

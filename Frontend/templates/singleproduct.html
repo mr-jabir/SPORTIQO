@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en">
+
+<head>
+
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>SPORTIQO SPORTS MALL</title>
+
+
+    <meta name="description" content="Snow - Clean & Minimal Portfolio HTML template.">
+    <meta name="keywords" content="portfolio, clean, minimal, blog, template, portfolio website">
+    <meta name="author" content="nK">
+
+    <link rel="icon" type="image/png" href="{% static 'assets/images/logo2.png' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+<!--    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">-->
+
+<link rel="stylesheet" href="{% static 'assets/css/combined.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/all.min.css' %}">
+<!--	&lt;!&ndash; bootstrap &ndash;&gt;-->
+	<link rel="stylesheet" href="{% static 'product/assets/bootstrap/css/bootstrap.min.css' %}">
+<!--	&lt;!&ndash; owl carousel &ndash;&gt;-->
+	<link rel="stylesheet" href="{% static 'product/assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/magnific-popup.css' %}">
+<!--	&lt;!&ndash; animate css &ndash;&gt;-->
+	<link rel="stylesheet" href="{% static 'product/assets/css/animate.css' %}">
+<!--	&lt;!&ndash; mean menu css &ndash;&gt;-->
+	<link rel="stylesheet" href="{% static 'product/assets/css/meanmenu.min.css' %}">
+<!--	&lt;!&ndash; main style &ndash;&gt;-->
+	<link rel="stylesheet" href="{% static 'product/assets/css/main.css' %}">
+<!--	&lt;!&ndash; responsive &ndash;&gt;-->
+	<link rel="stylesheet" href="{% static 'product/assets/css/responsive.css' %}">
+
+<body>
+ <div class="top-header-area" id="sticker" style="background-color: #202c45;" >
+      <div class="container" >
+         <div class="row">
+            <div class="col-lg-12 col-sm-12 text-center">
+               <div class="main-menu-wrap">
+                  <!-- logo -->
+                  <div class="site-logo">
+                     <a href="index.html">
+<!--                        <h3 style="font-color: red">Care<span>Point</span></h3>-->
+                         <img src="{% static 'product/assets/img/logoo.png' %}" alt="">
+                     </a>
+                  </div>
+<!--                   logo -->
+
+
+
+
+<!--                   menu start -->
+                  <nav class="main-menu">
+                     <ul>
+                        <li class="current-list-item"><a href="{% url 'homepage' %}">HOME</a>
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="index.html">Static Home</a></li>-->
+<!--                              <li><a href="index_2.html">Slider Home</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                         <li>
+                            <a href="{% url 'categorypage' %}">CATEGORIES</a>
+                        </li>
+
+                         <li>
+                            <a href="{% url 'contactpage' %}">CONTACT</a>
+                        </li>
+<!--                        <li><a href="#">Pages</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="404.html">404 page</a></li>-->
+<!--                              <li><a href="about.html">About</a></li>-->
+<!--                              <li><a href="cart.html">Cart</a></li>-->
+<!--                              <li><a href="checkout.html">Check Out</a></li>-->
+<!--                              <li><a href="contact.html">Contact</a></li>-->
+<!--                              <li><a href="news.html">News</a></li>-->
+<!--                              <li><a href="shop.html">Shop</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+<!--                        <li><a href="news.html">News</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="news.html">News</a></li>-->
+<!--                              <li><a href="single-news.html">Single News</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                         <i class="fas fa-user-alt"></i>
+                        {% if request.session.username %}
+                        <li><a href=""><B>{{ request.session.username }}</B></a>
+                           {% endif %}
+                           <ul class="sub-menu">
+                              <li><a href="{% url 'weblogin' %}">SIGN IN/SIGN UP</a></li>
+                              <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                           </ul>
+                        </li>
+<!--                        <li><a href="shop.html">Shop</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="shop.html">Shop</a></li>-->
+<!--                              <li><a href="checkout.html">Check Out</a></li>-->
+<!--                              <li><a href="single-product/assets.html">Single Product/assets</a></li>-->
+<!--                              <li><a href="cart.html">Cart</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                        <li>
+                           <div class="header-icons">
+                              <a class="shopping-cart" href="{% url 'viewcartpage' %}"><i class="fas fa-shopping-cart"></i></a>
+<!--                              <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+                           </div>
+                        </li>
+                     </ul>
+                  </nav>
+<!--                  <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+<!--                  <div class="mobile-menu"></div>-->
+                  <!-- menu end -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img">
+						<img src="{{ dat.Image.url }}" alt="">
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="single-product-content">
+						<h3>{{dat.Name}}</h3>
+
+						<p class="single-product-pricing"><span>₹{{dat.Price}}</span> </p>
+						<p> {{dat.Description}}</p>
+                        <form action="{% url 'savecart' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+						<div class="single-product-form">
+
+
+								<input type="number" placeholder="0"  id="quantity" name="quantity"><br>
+                               <input type="hidden" name="price" id="price"  value="{{dat.Price}}">
+                        <label>total price</label><br>
+                        <input type="text" name="totalprice" id="total">
+                                <input type="hidden" name="prodname" value="{{dat.Name}}">
+                                <input type="hidden" name="procart" value="{{dat.Description}}">
+
+                            <br><br>
+							<button class="btn btn-warning py-3 px-5 mt-3">Add to Cart<i class="fas fa-shopping-cart"></i> </button>
+                            </form>
+						</div>
+                </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+							<p>SPORTIQO SPORTS MALL</p>
+                             <p>www.sportiqo.com</p>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script src="{% static 'assets/js/combined.js' %}"></script>
+	<!-- jquery -->
+	<script src="{% static 'product/assets/js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'product/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'product/assets/js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'product/assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'product/assets/js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'product/assets/js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'product/assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'product/assets/js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'product/assets/js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'product/assets/js/main.js' %}"></script>
+ <script type="text/javascript">
+        $(document).ready(function(){
+        $("#quantity").change(function(){
+        quantity=document.getElementById("quantity").value;
+        price=document.getElementById("price").value;
+        total=quantity*price;
+        document.getElementById("total").value=total;
+        });
+    });
+</script>
+</body>
+
+</html>

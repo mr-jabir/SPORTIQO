@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+{% load static %}
+<!--
+  Name: Snow - Minimal & Clean Portfolio HTML Template
+  Version: 1.0.1
+  Author: nK, unvab
+  Website: https://nkdev.info, http://unvab.com/
+  Purchase: https://nkdev.info
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2017.
+-->
+
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>SPORTIQO SPORTS MALL</title>
+
+    <meta name="description" content="Snow - Clean & Minimal Portfolio HTML template.">
+    <meta name="keywords" content="portfolio, clean, minimal, blog, template, portfolio website">
+    <meta name="author" content="nK">
+
+    <link rel="icon" type="image/png" href="{% static 'assets/images/logo2.png' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'assets/css/combined.css' %}">
+
+    <!-- END: Styles -->
+
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'product/assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'product/assets/css/responsive.css' %}">
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="top-header-area" id="sticker" style="background-color: #202c45;" >
+      <div class="container" >
+         <div class="row">
+            <div class="col-lg-12 col-sm-12 text-center">
+               <div class="main-menu-wrap">
+                  <!-- logo -->
+                  <div class="site-logo">
+                     <a href="index.html">
+<!--                        <h3 style="font-color: red">Care<span>Point</span></h3>-->
+                         <img src="{% static 'product/assets/img/logoo.png' %}" alt="">
+                     </a>
+                  </div>
+<!--                   logo -->
+
+
+
+
+<!--                   menu start -->
+                  <nav class="main-menu">
+                     <ul>
+                        <li class="current-list-item"><a href="{% url 'homepage' %}">HOME</a>
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="index.html">Static Home</a></li>-->
+<!--                              <li><a href="index_2.html">Slider Home</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                         <li>
+                            <a href="{% url 'categorypage' %}">CATEGORIES</a>
+                        </li>
+
+                         <li>
+                            <a href="{% url 'contactpage' %}">CONTACT</a>
+                        </li>
+<!--                        <li><a href="#">Pages</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="404.html">404 page</a></li>-->
+<!--                              <li><a href="about.html">About</a></li>-->
+<!--                              <li><a href="cart.html">Cart</a></li>-->
+<!--                              <li><a href="checkout.html">Check Out</a></li>-->
+<!--                              <li><a href="contact.html">Contact</a></li>-->
+<!--                              <li><a href="news.html">News</a></li>-->
+<!--                              <li><a href="shop.html">Shop</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+<!--                        <li><a href="news.html">News</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="news.html">News</a></li>-->
+<!--                              <li><a href="single-news.html">Single News</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                         <i class="fas fa-user-alt"></i>
+                        {% if request.session.username %}
+                        <li><a href=""><B>{{ request.session.username }}</B></a>
+                           {% endif %}
+                           <ul class="sub-menu">
+                              <li><a href="{% url 'weblogin' %}">SIGN IN/SIGN UP</a></li>
+                              <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                           </ul>
+                        </li>
+<!--                        <li><a href="shop.html">Shop</a>-->
+<!--                           <ul class="sub-menu">-->
+<!--                              <li><a href="shop.html">Shop</a></li>-->
+<!--                              <li><a href="checkout.html">Check Out</a></li>-->
+<!--                              <li><a href="single-product/assets.html">Single Product/assets</a></li>-->
+<!--                              <li><a href="cart.html">Cart</a></li>-->
+<!--                           </ul>-->
+<!--                        </li>-->
+                        <li>
+                           <div class="header-icons">
+                              <a class="shopping-cart" href="{% url 'viewcartpage' %}"><i class="fas fa-shopping-cart"></i></a>
+<!--                              <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+                           </div>
+                        </li>
+                     </ul>
+                  </nav>
+<!--                  <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+<!--                  <div class="mobile-menu"></div>-->
+                  <!-- menu end -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <!--
+    START: Navbar Mobile
+-->
+    <nav class="nk-navbar nk-navbar-full nk-navbar-align-center" id="nk-nav-mobile">
+        <div class="nk-navbar-bg">
+            <div class="bg-image" style="background-image: url({% static 'assets/images/bg-menu.jpg' %})"></div>
+        </div>
+        <div class="nk-nav-table">
+            <div class="nk-nav-row">
+                <div class="container">
+                    <div class="nk-nav-header">
+
+                        <div class="nk-nav-logo">
+                            <a href="index.html" class="nk-nav-logo">
+                                <img src="{% static 'assets/images/logo-light.svg' %}" alt="" width="85">
+                            </a>
+                        </div>
+
+                        <div class="nk-nav-close nk-navbar-full-toggle">
+                            <span class="nk-icon-close"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-nav-row-full nk-nav-row">
+                <div class="nano">
+                    <div class="nano-content">
+                        <div class="nk-nav-table">
+                            <div class="nk-nav-row nk-nav-row-full nk-nav-row-center nk-navbar-mobile-content">
+                                <ul class="nk-nav">
+                                    <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-nav-row">
+                <div class="container">
+                    <div class="nk-nav-social">
+                        <ul>
+                            <li><a href="https://twitter.com/nkdevv"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/unvabdesign/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://dribbble.com/_nK"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="https://www.instagram.com/unvab/"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Navbar Mobile -->
+
+
+    <div class="nk-main">
+
+
+        <div id="nk-header-title-scroll-down"></div>
+
+
+        <div class="nk-box bg-white" id="projects">
+
+            <div class="nk-gap-2 mt-12"></div>
+
+
+        <!-- START: Blog -->
+<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">
+						<h3><span class="orange-text">Our</span> Products</h3>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+                 {% for product in products %}
+				<div class="col-lg-4 col-md-6 text-center">
+
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{{ product.Image.url }}" height="180px" width="180px" alt=""></a>
+						</div>
+						<h3>{{ product.Name }}</h3>
+						<p class="product-price"><span>{{product.Description }}</span> {{ product.Price }}</p>
+						<a href="{% url 'productsingle' dataid=product.id %}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Show Details</a>
+					</div>
+				</div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+        </div>
+
+
+<!--                    </div>-->
+
+<!--                </div>-->
+
+                <!-- END: Carousel -->
+<!--            </div>-->
+<!--            <div class="nk-gap-5 mt-20"></div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; END: Blog &ndash;&gt;-->
+
+        <!-- START: Contact Info -->
+<!--        <div class="container" id="contact">-->
+<!--            <div class="nk-gap-5"></div>-->
+<!--            <div class="row vertical-gap">-->
+<!--                <div class="col-lg-5">-->
+<!--                    &lt;!&ndash; START: Info &ndash;&gt;-->
+<!--                    <h2 class="display-4">Contact Info:</h2>-->
+<!--                    <div class="nk-gap mnt-3"></div>-->
+
+<!--                    <p>Praesent interdum congue mauris, et fringilla lacus pel vitae. Quisque nisl mauris, aliquam eu ultrices vel, conse vitae sapien at imperdiet risus. Quisque cursus risus id. fermentum, in auctor quam consectetur.</p>-->
+
+<!--                    <ul class="nk-contact-info">-->
+<!--                        <li>-->
+<!--                            <strong>Address:</strong> 10111 Santa Monica Boulevard, LA</li>-->
+<!--                        <li>-->
+<!--                            <strong>Phone:</strong> +44 987 065 908</li>-->
+<!--                        <li>-->
+<!--                            <strong>Email:</strong> info@Example.com</li>-->
+<!--                        <li>-->
+<!--                            <strong>Fax:</strong> +44 987 065 909</li>-->
+<!--                    </ul>-->
+<!--                    &lt;!&ndash; END: Info &ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="col-lg-7">-->
+<!--                    &lt;!&ndash; START: Form &ndash;&gt;-->
+<!--                    <form action="#" class="nk-form nk-form-ajax">-->
+<!--                        <div class="row vertical-gap">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <input type="text" class="form-control required" name="name" placeholder="Your Name">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <input type="email" class="form-control required" name="email" placeholder="Your Email">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="nk-gap-1"></div>-->
+<!--                        <input type="text" class="form-control required" name="title" placeholder="Your Title">-->
+
+<!--                        <div class="nk-gap-1"></div>-->
+<!--                        <textarea class="form-control required" name="message" rows="8" placeholder="Your Comment" aria-required="true"></textarea>-->
+<!--                        <div class="nk-gap-1"></div>-->
+<!--                        <div class="nk-form-response-success"></div>-->
+<!--                        <div class="nk-form-response-error"></div>-->
+<!--                        <button class="nk-btn">Send Message</button>-->
+<!--                    </form>-->
+<!--                    &lt;!&ndash; END: Form &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="nk-gap-5"></div>-->
+<!--        </div>-->
+        <!-- END: Contact Info -->
+
+
+
+</div>
+        <!--
+    START: Footer
+-->
+
+
+	<!-- end footer -->
+
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+							<p>SPORTIQO SPORTS MALL</p>
+                             <p>www.sportiqo.com</p>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+        <!-- END: Footer -->
+
+
+    </div>
+
+
+
+
+    <!-- START: Scripts -->
+
+    <script src="{% static 'assets/js/combined.js' %}"></script>
+
+    <!-- END: Scripts -->
+
+
+</body>
+
+</html>
